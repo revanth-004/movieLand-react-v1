@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import SearchIcon from "./search.svg";
 import MovieCard from "./MovieCard";
 
-const API_URL = "http://www.omdbapi.com?apikey=60adf5d6";
+const API_URL = "https://www.omdbapi.com?apikey=60adf5d6";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -20,18 +19,19 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Movie Land</h1>
-      <div className="search">
-        <input
-          placeholder="Search fro movies"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <img
-          src={SearchIcon}
-          alt="search"
-          onClick={() => searchMovies(searchTerm)}
-        />
+      <div className="navbar">
+        <div className="title">
+          <h1>Movie Land</h1>
+        </div>
+
+        <div className="search">
+          <input
+            placeholder="Search for movies"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button onClick={() => searchMovies(searchTerm)}>search</button>
+        </div>
       </div>
 
       {movies?.length > 0 ? (

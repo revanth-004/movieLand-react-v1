@@ -8,86 +8,76 @@
 }
 
 :root {
-  --font-roboto: "Roboto Slab", serif;
-  --font-raleway: "Raleway", sans-serif;
+  /* --font-roboto: "Roboto Slab", serif;
+  --font-raleway: "Raleway", sans-serif;*/
+  --font-inconsolata: "Inconsolata", monospace;
+  --color-primary: white;
+  --color-primary-dark: #2d3497;
+  --color-secondary: #074eb1;
+  --color-secondary-dark: #cdcde2;
 }
 
 body {
-  font-family: var(--font-roboto);
-  background-color: #212426;
+  font-family: var(--font-inconsolata);
+  background-color: var(--color-primary);
 }
 
 .app {
-  padding: 4rem;
+  padding: 0.5rem;
 
-  display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 1.25rem;
   letter-spacing: 0.9px;
-  background: linear-gradient(
-    90deg,
-    rgba(249, 211, 180, 1) 0%,
-    rgba(249, 211, 180, 0) 100%
-  );
+  background: var(--color-secondary);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  width: fit-content;
 }
 
+.navbar {
+  display: flex;
+}
 .search {
   width: 71%;
-  margin: 4rem 0 2rem;
-
+  margin: 0 1rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding: 1.5rem 1.75rem;
-  border-radius: 3rem;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  border: 1px solid #b9d3ff;
+  border-radius: 2px;
+  background: var(--color-primary);
+  padding: 0.25rem 0 0.25rem;
 }
 
 .search input {
   flex: 1;
   border: none;
-  font-size: 1.5rem;
-  font-family: var(--font-raleway);
+  font-size: 0.85rem;
+  font-family: var(--font-inconsolata);
   font-weight: 500;
   padding-right: 1rem;
-
   outline: none;
-  color: #a1a1a1;
-  background: #1f2123;
+  color: var(--color-secondary);
+  background: var(--color-primary);
 }
-
-.search img {
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
+.search input[placeholder] {
+  color: var(--color-secondary);
+  opacity: 40%;
 }
-
-/* .search button {
-  padding: 20px 40px;
-  border-radius: 0.5rem;
-  margin-left: 15px;
-  color: #a1a1a1;
-  font-family: var(--font-raleway);
-  font-weight: 900;
-  letter-spacing: 0.75px;
-  font-size: 1.25rem;
+.search button {
+  margin: none;
   cursor: pointer;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-} */
+  opacity: 40%;
+  color: var(--color-secondary);
+  font-family: var(--font-inconsolata);
+  background-color: var(--color-secondary-dark);
+  margin-right: 4px;
+  margin-top: 0px;
+}
 
 .empty {
   width: 100%;
@@ -100,8 +90,8 @@ h1 {
 
 .empty h2 {
   font-size: 1.25rem;
-  color: #f9d3b4;
-  font-family: var(--font-raleway);
+  color: var(--color-secondary);
+  font-family: var(--font-inconsolata);
 }
 
 .container {
@@ -115,14 +105,14 @@ h1 {
 }
 
 .movie {
-  width: 310px;
-  height: 460px;
+  width: 210px;
+  height: 300px;
   margin: 1.5rem;
 
   position: relative;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
-  border: none;
+  border: 0;
 
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
@@ -134,7 +124,6 @@ h1 {
   width: 100%;
   opacity: 0;
   top: 0;
-  color: #f9d3b4;
 }
 
 .movie:hover {
@@ -154,9 +143,10 @@ h1 {
 
 .movie div:nth-of-type(3) {
   z-index: 2;
-  background-color: #343739;
-  padding: 16px 24px 24px 24px;
-
+  background-color: var(--color-primary-dark);
+  top: 70%;
+  padding-left: 14px;
+  padding-top: 14mpx;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -164,18 +154,25 @@ h1 {
 }
 
 .movie div:nth-of-type(3) span {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-inconsolata);
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 2px;
   font-weight: 500;
-  color: #f0f0f0;
+  color: var(--color-primary);
 }
 
 .movie div:nth-of-type(3) h3 {
   margin-top: 5px;
-  font-family: "Roboto Slab", serif;
-  color: #f9d3b4;
+  font-family: var(--font-inconsolata);
+  color: var(--color-primary);
+}
+.movie:hover div:nth-of-type(3) h3,
+span {
+  color: var(--color-primary-dark);
+}
+.movie:hover div:nth-of-type(3) span {
+  color: var(--color-secondary);
 }
 
 .movie:hover div:nth-of-type(2) {
@@ -189,6 +186,7 @@ h1 {
 
 .movie:hover div:nth-of-type(1) {
   opacity: 1;
+  color: var(--color-secondary);
 }
 
 @media screen and (max-width: 600px) {
