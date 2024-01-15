@@ -75,7 +75,7 @@ h1 {
   color: var(--color-secondary);
   font-family: var(--font-inconsolata);
   background-color: var(--color-secondary-dark);
-  margin-right: 4px;
+  margin:0 4px 0 0;
 }
 
 .empty {
