@@ -76,7 +76,6 @@ h1 {
   font-family: var(--font-inconsolata);
   background-color: var(--color-secondary-dark);
   margin-right: 4px;
-  margin-top: 0px;
 }
 
 .empty {
